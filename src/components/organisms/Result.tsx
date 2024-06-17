@@ -2,14 +2,14 @@
 import React from 'react';
 import UserQuestion from '../molecules/UserQuestion';
 import BotResponse from '../molecules/BotResponse';
-import './Result.css';
+import styles from '../../styles/Result.module.css';
 
 interface ResultProps {
     messages: { content: string, role: string, avatar: string }[];
 }
 
 const Result: React.FC<ResultProps> = ({ messages }) => (
-    <div className="result">
+    <div className={styles.result}>
         {messages.map((message, index) => (
             message.role === 'user' ? (
                 <UserQuestion key={index} avatarUrl={message.avatar} questionText={message.content} />

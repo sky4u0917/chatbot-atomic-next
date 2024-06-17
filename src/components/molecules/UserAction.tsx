@@ -1,9 +1,8 @@
-// src/components/molecules/UserAction.js
-import React, { useState } from 'react';
+import React, { InputHTMLAttributes, useState } from 'react';
 import Title from '../atoms/Title';
 import Question from '../atoms/Question';
 import ResultButton from '../atoms/ResultButton';
-import './UserAction.css';
+import styles from '../../styles/UserAction.module.css';
 
 interface UserActionProps {
     titleText: string;
@@ -17,7 +16,7 @@ interface UserActionProps {
 const UserAction: React.FC<UserActionProps> = ({ titleText, titleColor, buttonText, buttonTextColor, buttonBgColor, onButtonClick }) => {
     const [question, setQuestion] = useState('');
 
-    const handleInputChange = (e) => {
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setQuestion(e.target.value);
     };
 
@@ -27,7 +26,7 @@ const UserAction: React.FC<UserActionProps> = ({ titleText, titleColor, buttonTe
     };
 
     return (
-        <div className="user-action">
+        <div className={styles.userAction}>
             <Title text={titleText} color={titleColor} />
             <div>
                 <Question value={question} onChange={handleInputChange} />

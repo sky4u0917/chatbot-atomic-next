@@ -1,7 +1,7 @@
 import React from 'react';
 import Avatar from '../atoms/Avatar';
 import Text from '../atoms/Text';
-import './BotResponse.css';
+import styles from '../../styles/BotResponse.module.css';
 
 interface BotResponseProps {
     avatarUrl: string;
@@ -9,7 +9,7 @@ interface BotResponseProps {
 }
 
 const BotResponse: React.FC<BotResponseProps> = ({ avatarUrl, responseText }) => (
-    <div className='bot-response'>
+    <div className={styles.botResponse}>
         <Text content={responseText} />
         <Avatar imageUrl={avatarUrl} />
     </div>

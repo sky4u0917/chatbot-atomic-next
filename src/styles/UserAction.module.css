@@ -1,5 +1,4 @@
-/* src/components/molecules/UserAction.css */
-.user-action {
+.userAction {
   display: flex;
   flex-direction: column;
   align-items: center;
